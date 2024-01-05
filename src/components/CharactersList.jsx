@@ -1,13 +1,20 @@
 import {GET_CHARACTERS} from '../graphql/Queries'
 import {useQuery} from '@apollo/client';
 import Character from './Character';
+import NavPage from './NavPage';
+import { useState } from 'react';
 
 function CharactersList() {
-    const { loading, error, data } = useQuery(GET_CHARACTERS);
+    const [page, setPage] = useState(1);
+    const { loading, error, data } = useQuery(GET_CHARACTERS,{
+      variables: { page },
+    });
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
     return(
-      <div className='container bg-danger'>
+      
+      <div className='container'>
+        <NavPage page={page} setPage={setPage}/>
          <div className='row'>
           {data && data.characters.results.map(({ id, name, image}) => {
               return(
@@ -17,8 +24,11 @@ function CharactersList() {
               ) 
             })}
          </div>
+         <NavPage page={page} setPage={setPage}/>
       </div>
+      
      ) 
+    
 }
 
 export default CharactersList
