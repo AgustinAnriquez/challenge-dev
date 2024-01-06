@@ -5,7 +5,6 @@ import { GET_GENDERS } from '../graphql/Queries';
 
 function GenderFilter({ onGenderChange }) {
     const [uniqueGenders, setUniqueGenders] = useState([]);
-    const [selectedGender, setSelectedGender] = useState(''); 
     const { loading, error, data } = useQuery(GET_GENDERS);
     useEffect(() => {
         if (!loading && !error && data) {
@@ -17,7 +16,6 @@ function GenderFilter({ onGenderChange }) {
     
       const handleGenderChange = (value) => {
         onGenderChange(value);
-        setSelectedGender(value);
       };
     
     return (
