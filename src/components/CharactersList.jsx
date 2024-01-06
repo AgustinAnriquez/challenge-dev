@@ -7,7 +7,7 @@ import Search from './Search';
 import GenderFilter from './GenderFilter';
 import StatusFilter from './StatusFilter';
 import SpeciesFilter from './SpeciesFilter'
-import { LuRefreshCcwDot } from "react-icons/lu";
+import TriggerButton from './TriggerButton';
 function CharactersList() {
     const [page, setPage] = useState(1);
     const [searchName, setSearchName] = useState('');
@@ -56,7 +56,7 @@ function CharactersList() {
           <GenderFilter onGenderChange={handleGenderChange}/>
           <StatusFilter onStatusChange={handleStatusChange}/>
           <SpeciesFilter onSpeciesChange={handleSpeciesChange}/>
-          <button onClick={handleRefreshClick}> <LuRefreshCcwDot /> </button>
+          <TriggerButton onRefreshClick={handleRefreshClick}/> 
         </div>
         <NavPage page={page} setPage={setPage}/>
          <div className='row'>
