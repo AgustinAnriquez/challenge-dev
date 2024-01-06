@@ -53,6 +53,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.character{
+  will-change: filter;
+  transition: filter 300ms;
+  cursor: pointer;
+}
+
+.character:hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

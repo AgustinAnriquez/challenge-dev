@@ -27,7 +27,7 @@ function Character({ id, name, image }) {
   const handleShow = () => setShow(true);
 
   return (
-    <div>
+    <div className='character'>
       <div className="text-center p-5" onClick={handleShow}>
             <h3>{name}</h3>
             <img className="img-fluid rounded-pill" alt={name} src={`${image}`} />

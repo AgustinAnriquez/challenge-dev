@@ -1,6 +1,6 @@
 function NavPage({page, setPage}) {
   return (
-    <nav className="d-flex justify-content-between align-items-center">
+    <nav className="d-flex justify-content-between align-items-center container">
         <button className="page-item"
         onClick={() => {
             if (page > 1) {
