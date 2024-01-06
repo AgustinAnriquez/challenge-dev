@@ -2,7 +2,7 @@ import React from 'react'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { LuRefreshCcwDot } from "react-icons/lu";
-function TriggerButton({onRefreshClick}) {
+function RefreshButton({onRefreshClick}) {
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
           Refresh
@@ -23,4 +23,4 @@ function TriggerButton({onRefreshClick}) {
   )
 
 }
-export default TriggerButton
+export default RefreshButton
