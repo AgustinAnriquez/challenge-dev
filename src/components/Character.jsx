@@ -2,8 +2,6 @@ import Modal from 'react-bootstrap/Modal';
 import { GET_CHARACTER } from '../graphql/Queries';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
-import { Button } from 'react-bootstrap';
-
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -33,8 +31,8 @@ function Character({ id, name, image }) {
             <img className="img-fluid rounded-pill" alt={name} src={`${image}`} />
           </div>
           <Modal show={show} onHide={handleClose} >
-          <Modal.Header closeButton className='bg-dark text-white'>
-            <Modal.Title className='text-center'>{character.name}</Modal.Title>
+          <Modal.Header closeButton className='bg-white text-dark'>
+            <Modal.Title >{character.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body className='bg-dark text-white'>
             <Container>
@@ -55,11 +53,6 @@ function Character({ id, name, image }) {
            </Container>
            
           </Modal.Body>
-          <Modal.Footer className='bg-dark text-white'>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
         </Modal>
     </div>
   );
